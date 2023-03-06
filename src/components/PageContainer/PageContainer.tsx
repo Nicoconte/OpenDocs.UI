@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 
@@ -16,7 +15,7 @@ function PageContainer({ children }: PageContainerProps) {
                 <div className={styles.pageSidebarContainer}>
                     <Sidebar />             
                 </div>
-                <div className={`${styles.pageContent} bg-slate-400`}>
+                <div className={`${styles.pageContent} bg-slate-400 dark:bg-cyan-900`}>
                     { children }                    
                 </div>            
             </div>
