@@ -1,0 +1,32 @@
+.sidebarItemContainer {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.sidebarItemText {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;    
+}
+
+.sidebarItemText span {
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.sidebarItemIcon {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebarItemIcon svg {
+    margin-left: 30px;
+}

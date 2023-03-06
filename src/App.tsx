@@ -1,10 +1,11 @@
-import './App.css'
+import './App.css';
+import PageContainer from './components/PageContainer/PageContainer';
 
 function App() {
   return (
-    <div className="bg-slate-300">
-      <h1 className='text-3xl text-red-600'>Holaaa</h1>
-    </div>
+    <PageContainer>
+      <span></span>
+    </PageContainer>
   )
 }
 

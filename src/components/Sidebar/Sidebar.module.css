@@ -1,0 +1,21 @@
+.sidebarContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarContent {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarFooter {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

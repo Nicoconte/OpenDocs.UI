@@ -1,0 +1,58 @@
+.navbarContainer {
+    height: 75px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;    
+}
+
+
+.navbarContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbarMainContent {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.navbarButton {
+    width: 30px; 
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:40px;
+}
+
+.navbarMainContent h1 {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.navbarMainContent span {
+    margin-left: 5px;
+}
+
+.navbarThemeToggler {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbarThemeToggler button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
