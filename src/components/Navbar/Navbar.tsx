@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./Navbar.module.css";
 
 import { HiMenu, BsMoonFill } from "react-icons/all"
+import ThemeToggler from "../ThemeToggler/ThemeToggler";
 
 function Navbar() {
     return (
@@ -13,12 +14,9 @@ function Navbar() {
                         <HiMenu fontSize={30} />
                     </button>
                     <h1>OpenDocs</h1>
-                    <span>(v.0.1)</span>                
                 </div>
                 <div className={styles.navbarThemeToggler}>
-                    <button className="text-slate-600">
-                        <BsMoonFill fontSize={30} />
-                    </button>
+                    <ThemeToggler />
                 </div>                
             </div> 
         </div>

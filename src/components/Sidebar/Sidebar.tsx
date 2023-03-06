@@ -14,7 +14,10 @@ function Sidebar() {
                 <SidebarItem text="Ayuda" icon={<BiHelpCircle fontSize={25} />} />
             </div>
             <div className={`${styles.sidebarFooter}`}>
-                <a target="_blank" href="https://github.com/Nicoconte"><BsGithub fontSize={18} /></a>
+                <a target="_blank" href="https://github.com/Nicoconte">
+                    <BsGithub fontSize={18} />
+                    <span>(v.0.1)</span>
+                </a>
             </div>
         </div>
     )
