@@ -6,7 +6,6 @@ import styles from "./ThemeToggler.module.css";
 
 function loadTheme(theme: string) {
     if (theme === "dark") {
-        console.log("Pero que me esta pasando ", theme)
         document.documentElement.classList.add("dark")
     } else {
         document.documentElement.classList.remove("dark")
