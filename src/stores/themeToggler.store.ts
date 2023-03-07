@@ -4,7 +4,7 @@ import { devtools, persist } from "zustand/middleware";
 
 interface ThemeTogglerState {
     theme: string,
-    toggle: () => void
+    toggleTheme: () => void
 }
 
 const useThemeTogglerStore = create<ThemeTogglerState>() (
@@ -12,7 +12,7 @@ const useThemeTogglerStore = create<ThemeTogglerState>() (
         persist(
             (set) => ({
                 theme: "light",
-                toggle: () => set((state) => ({ theme: state.theme === "light" ? "dark" : "light" }))
+                toggleTheme: () => set((state) => ({ theme: state.theme === "light" ? "dark" : "light" }))
             }),
             {
                 name: "theme-storage"

@@ -6,6 +6,10 @@
     margin-top: 10px;
 }
 
+.sidebarItemTextHidden {
+    display: none;    
+}
+
 .sidebarItemText {
     width: 75%;
     height: 100%;
@@ -25,6 +29,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.sidebarItemIconWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;    
 }
 
 .sidebarItemIcon svg {

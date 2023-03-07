@@ -7,12 +7,22 @@
 }
 
 .pageSidebarContainer {
-    width: 15%;
+    width: 16%;
     height: 100%;
 }
 
 .pageContent {
-    width: 85%;
+    width: 84%;
+    height: 100%;
+}
+
+.pageSidebarContainerWrapper {
+    width: 5%;
+    height: 100%;
+}
+
+.pageContentWrapper {
+    width: 95%;
     height: 100%;
 }
 

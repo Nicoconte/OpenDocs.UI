@@ -1,27 +1,28 @@
-import React from "react";
-import { BsMoonFill } from "react-icons/all";
+import React, { useEffect } from "react";
+import { BsMoonFill, BsFillSunFill } from "react-icons/all";
 import useThemeTogglerStore from "../../stores/themeToggler.store";
 
 import styles from "./ThemeToggler.module.css";
 
-function ThemeToggler() {
-    const [toggle, theme] = useThemeTogglerStore((state) => [state.toggle, state.theme]);
-
-    function handleToggle() {
-        toggle();
-
-        let nextTheme = theme;
-
-        if (nextTheme === "dark") {
-            document.documentElement.classList.add("dark")
-        } else {
-            document.documentElement.classList.remove("dark")
-        }
+function loadTheme(theme: string) {
+    if (theme === "dark") {
+        console.log("Pero que me esta pasando ", theme)
+        document.documentElement.classList.add("dark")
+    } else {
+        document.documentElement.classList.remove("dark")
     }
+}
+
+function ThemeToggler() {
+    const [toggleTheme, theme] = useThemeTogglerStore((state) => [state.toggleTheme, state.theme]);
+
+    useEffect(() => {
+        loadTheme(theme);
+    }, [theme])
 
     return (
-        <button onClick={handleToggle}  className={`${styles.themeTogglerButton} text-slate-50 bg-cyan-900`}>
-            <BsMoonFill fontSize={20} />
+        <button onClick={toggleTheme}  className={`${styles.themeTogglerButton} text-slate-50 ${theme === "light" ? "bg-cyan-900" : "bg-orange-400"}`}>
+            { theme === "light" ? <BsMoonFill fontSize={20} /> : <BsFillSunFill fontSize={20} /> }
         </button>
     )
 }

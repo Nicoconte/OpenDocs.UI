@@ -1,4 +1,4 @@
-import React from "react";
+import useMenuTogglerStore from "../../../stores/menuToggler.store";
 
 import styles from "./SidebarItem.module.css"
 
@@ -8,12 +8,14 @@ type SidebarItemProps = {
 }
 
 function SidebarItem({ icon, text }: SidebarItemProps) {
+    const isOpen = useMenuTogglerStore((state) => state.isOpen);
+
     return (
-        <div className={`${styles.sidebarItemContainer} hover:bg-slate-700 hover:text-slate-200 hover:cursor-pointer`}>
-            <div className={styles.sidebarItemIcon}>
+        <div title={text} className={`${styles.sidebarItemContainer} hover:bg-slate-700 dark:hover:bg-cyan-500 hover:text-slate-200 hover:cursor-pointer transition ease-linear`}>
+            <div className={isOpen ? styles.sidebarItemIcon : styles.sidebarItemIconWrapper}>
                 {icon}
             </div>
-            <div className={styles.sidebarItemText}>
+            <div className={`${isOpen ? styles.sidebarItemText : styles.sidebarItemTextHidden}`}>
                 <span>{text}</span>
             </div>
         </div>

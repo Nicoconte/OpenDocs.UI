@@ -1,3 +1,5 @@
+import useMenuTogglerStore from "../../stores/menuToggler.store";
+
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 
@@ -8,16 +10,18 @@ type PageContainerProps = {
 }
 
 function PageContainer({ children }: PageContainerProps) {
+    const isOpen = useMenuTogglerStore((state) => state.isOpen);
+
     return (
         <>
             <Navbar />
             <div className={styles.pageContainer}>
-                <div className={styles.pageSidebarContainer}>
+                <div className={isOpen ? styles.pageSidebarContainer : styles.pageSidebarContainerWrapper}>
                     <Sidebar />             
                 </div>
-                <div className={`${styles.pageContent} bg-slate-400 dark:bg-cyan-900`}>
+                <div className={`${isOpen ? styles.pageContainer : styles.pageContentWrapper} bg-slate-400 dark:bg-cyan-900 transition ease-linear transition-color duration-300`}>
                     { children }                    
-                </div>            
+                </div>
             </div>
         </>
     )
