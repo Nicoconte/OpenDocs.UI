@@ -1,5 +1,5 @@
 import { apiUrls } from "../constants/api.constant"
-import { ErrorResponse, GetAllAplicationResponse, GetApplicationByNameResponse } from "../contracts/responses";
+import { ErrorResponse, GetAllAplicationResponse, GetApplicationByGroupResponse, GetApplicationByNameResponse } from "../contracts/responses";
 import { buildQueryStringFilters } from "../utils/api.utils"
 import { axiosClient } from "./base.service"
 
@@ -13,7 +13,7 @@ export const ApplicationService = {
             return err.response.data as ErrorResponse 
         }
     },
-    getApplication: async(name: string): Promise<GetApplicationByNameResponse | ErrorResponse> => {
+    getApplicationByName: async(name: string): Promise<GetApplicationByNameResponse | ErrorResponse> => {
         try {
             let response =  await axiosClient.get(`${apiUrls.applicationEndpoint}/${name}`);
             return response.data as GetApplicationByNameResponse;   
@@ -28,5 +28,13 @@ export const ApplicationService = {
         } catch(err: any) {
             return err.response.data as ErrorResponse;
         }
-    }
+    },
+    getApplicationsByGroup: async(groupId: string): Promise<GetApplicationByGroupResponse | ErrorResponse> => {
+        try {
+            let response = await axiosClient.get(`${apiUrls.groupEndpoint}/${groupId}`);
+            return response.data as GetApplicationByGroupResponse
+        } catch(err: any) {
+            return err.response.data as ErrorResponse;
+        }
+    } 
 }
