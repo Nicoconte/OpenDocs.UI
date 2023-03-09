@@ -2,6 +2,7 @@ import React from "react";
 import { BsBox, BsBoxes, BiHelpCircle, BsGithub } from "react-icons/all";
 
 import styles from "./Sidebar.module.css";
+import SidebarFooter from "./SidebarFooter/SidebarFooter";
 import SidebarItem from "./SidebarItem/SidebarItem";
 
 
@@ -14,10 +15,7 @@ function Sidebar() {
                 <SidebarItem text="Ayuda" icon={<BiHelpCircle fontSize={25} />} />
             </div>
             <div className={`${styles.sidebarFooter} hover:text-slate-400 dark:hover:text-cyan-500 transition ease-linear`}>
-                <a target="_blank" href="https://github.com/Nicoconte">
-                    <BsGithub fontSize={18} />
-                    <span>(v.0.1)</span>
-                </a>
+                <SidebarFooter icon={<BsGithub fontSize={18} />} text="(v.0.1)" targetUrl="https://github.com/Nicoconte" />
             </div>
         </div>
     )
