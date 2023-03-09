@@ -6,5 +6,8 @@ export const buildQueryStringFilters = (queryObj: {[key: string]: any}): string 
 
 export const isErrorResponse = (obj: any): boolean => {
     let err = obj as ErrorResponse;
-    return err.detail !== undefined || err.type !== undefined || err.title !== undefined || err.errors !== undefined;
+    return err.detail !== undefined || 
+        err.type !== undefined || 
+        err.title !== undefined || 
+        err.errors !== undefined;
 }
