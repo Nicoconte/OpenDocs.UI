@@ -1,10 +1,12 @@
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
 import PageContainer from './components/PageContainer/PageContainer';
+import Router from './Router';
 
 function App() {
   return (
     <PageContainer>
-      <span></span>
+      <RouterProvider router={Router} />
     </PageContainer>
   )
 }
