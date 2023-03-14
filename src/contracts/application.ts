@@ -5,3 +5,8 @@ export interface Application {
     createdAt: string,
     updatedAt: string
 }
+
+export interface ApplicationGrouped {
+    group: string,
+    applications: Application[];
+}

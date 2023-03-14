@@ -4,10 +4,12 @@ import { buildQueryStringFilters } from "../utils/api.utils"
 import { axiosClient } from "./base.service"
 
 export const ApplicationService = {
-    getAllApplication: async(filters: {}): Promise<GetAllAplicationResponse | ErrorResponse> => {
+    getAllApplication: async(filters: {} = {}): Promise<GetAllAplicationResponse | ErrorResponse> => {
         try {
             let queryString = buildQueryStringFilters(filters);
-            let response = await axiosClient.get(`${apiUrls.applicationEndpoint}?${queryString}`)
+            
+            let response = await axiosClient.get(`${apiUrls.applicationEndpoint}${queryString}`);
+
             return response.data as GetAllAplicationResponse;
         } catch(err: any) {
             return err.response.data as ErrorResponse 

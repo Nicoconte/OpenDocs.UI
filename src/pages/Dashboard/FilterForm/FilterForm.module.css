@@ -1,0 +1,21 @@
+.filterFormContainer {
+    width: 90%;
+    height: 13%;
+    border-radius: 5px;
+    background-color: red;
+}
+
+
+.filterForm {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding: 0px 20px;
+}
+
+.filterForm input[type="checkbox"] {
+    margin-left: 30px;
+}

@@ -1,12 +1,17 @@
+import React from 'react';
 import { RouterProvider } from 'react-router-dom';
 import './App.css';
+import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 import PageContainer from './components/PageContainer/PageContainer';
 import Router from './Router';
 
 function App() {
   return (
     <PageContainer>
-      <RouterProvider router={Router} />
+      <React.Fragment>
+        <LoadingSpinner />
+        <RouterProvider router={Router} />
+      </React.Fragment>
     </PageContainer>
   )
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { HiMenu } from "react-icons/all";
-import useMenuTogglerStore from "../../../stores/menuToggler.store";
+import useMenuTogglerStore from "../../../stores/menutoggler.store";
 
 import styles from "./BurgerMenu.module.css";
 

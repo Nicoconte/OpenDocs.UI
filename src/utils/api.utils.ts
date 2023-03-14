@@ -1,6 +1,8 @@
 import { ErrorResponse } from "../contracts/responses";
 
 export const buildQueryStringFilters = (queryObj: {[key: string]: any}): string => {
+    if (Object.keys(queryObj).length > 0) return "";
+
     return Object.keys(queryObj).map(k => `${k}=${queryObj[k]}`).join("&");
 }
 

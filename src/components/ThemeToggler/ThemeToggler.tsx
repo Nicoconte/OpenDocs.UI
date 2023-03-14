@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BsMoonFill, BsFillSunFill } from "react-icons/all";
-import useThemeTogglerStore from "../../stores/themeToggler.store";
+import useThemeTogglerStore from "../../stores/themetoggler.store";
 
 import styles from "./ThemeToggler.module.css";
 

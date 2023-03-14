@@ -4,10 +4,11 @@ import { buildQueryStringFilters } from "../utils/api.utils";
 import { axiosClient } from "./base.service";
 
 export const GroupService = {
-    getAllGroups: async(filter: {}): Promise<GetAllGroupsResponse | ErrorResponse> => {
+    getAllGroups: async(filters: {} = {}): Promise<GetAllGroupsResponse | ErrorResponse> => {
         try {
-            let queryString = buildQueryStringFilters(filter);
-            let response = await axiosClient.get(`${apiUrls.groupEndpoint}?${queryString}`);
+            let queryString = buildQueryStringFilters(filters);
+
+            let response = await axiosClient.get(`${apiUrls.groupEndpoint}${queryString}`);
 
             return response.data as GetAllGroupsResponse;
         } catch(err: any) {

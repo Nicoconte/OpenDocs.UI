@@ -1,4 +1,4 @@
-import useMenuTogglerStore from "../../stores/menuToggler.store";
+import useMenuTogglerStore from "../../stores/menutoggler.store";
 
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
