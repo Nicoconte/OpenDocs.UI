@@ -8,6 +8,7 @@ import styles from "./ApplicationList.module.css"
 import { RiErrorWarningLine } from "react-icons/ri";
 import ApplicationItem from "./ApplicationItem/ApplicationItem";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import PaginationButton from "./PaginationButton/PaginationButton";
 
 function ApplicationList() {
     const [applications, setApplications] = useDashboardStore((state) => [state.applications, state.setApplications]);
@@ -50,6 +51,7 @@ function ApplicationList() {
                     )}
                 </tbody>
             </table>
+            <PaginationButton />
         </div>
     )
 }
