@@ -1,0 +1,11 @@
+.paginationButton {
+    width: 90%;
+    height: 5%;
+    color:white;
+    border-end-start-radius: 5px;
+    background-color: #2196F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
