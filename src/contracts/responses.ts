@@ -21,7 +21,7 @@ export interface GetApplicationByGroupResponse {
 }
 
 export interface GetAllGroupsResponse {
-    groups: string | null
+    groups: string[] | null
 }
 
 export interface GetEnvironmentResponse {

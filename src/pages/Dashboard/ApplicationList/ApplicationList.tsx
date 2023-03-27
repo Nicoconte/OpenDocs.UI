@@ -6,18 +6,33 @@ import { isErrorResponse } from "../../../utils/api.utils";
 import useDashboardStore from "../../../stores/dashboard.store";
 import styles from "./ApplicationList.module.css"
 import { RiErrorWarningLine } from "react-icons/ri";
-import ApplicationItem from "./ApplicationItem/ApplicationItem";
-import { AiOutlinePlusCircle } from "react-icons/ai";
-import PaginationButton from "./PaginationButton/PaginationButton";
+import ApplicationItem from "../Common/ApplicationTable/ApplicationItem/ApplicationItem";
+import PaginationButton from "../Common/PaginationButton/PaginationButton";
+import useSkeletonStore from "../../../stores/skeleton.store";
+import ApplicationTable from "../Common/ApplicationTable/ApplicationTable";
 
 function ApplicationList() {
-    const [applications, setApplications] = useDashboardStore((state) => [state.applications, state.setApplications]);
+    const [applications, setApplications, setApplicationsGrouped] = 
+        useDashboardStore((state) => [
+            state.applications, 
+            state.setApplications,
+            state.setApplicationsGrouped
+        ]);
+
+    const [ setLoading ] = useSkeletonStore((state) => [state.setLoading])
 
     function fetchApplications() {
-        ApplicationService.getAllApplication().then(res => {
+        setApplicationsGrouped([]);
+        setLoading(true);
+        ApplicationService.getAllApplication()
+        .then(res => {
             if (!isErrorResponse(res)) {
                 setApplications((res as GetAllAplicationResponse).applications)
             }
+            setLoading(false);
+        })
+        .catch(err => {
+            setLoading(false);
         })
     }
 
@@ -36,21 +51,9 @@ function ApplicationList() {
 
     return (
         <div className={`${styles.applicationListContainer} bg-slate-200`}>
-            <table className="divide-y divide-gray-200">
-                <thead>
-                    <tr>
-                        <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
-                        <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Grupo</th>
-                        <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fecha creacion</th>
-                        <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ultima fecha actualizacion</th>
-                    </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
-                    {applications.length > 0 && applications.map((a, i) =>
-                        <ApplicationItem application={a} />
-                    )}
-                </tbody>
-            </table>
+            <ApplicationTable header={["Nombre", "Grupo", "Fecha creacion", "Ultima fecha actualizacion"]}>
+                {applications.map((a, i) =><ApplicationItem showGroupName={true} key={i} application={a} />)}
+            </ApplicationTable>
             <PaginationButton />
         </div>
     )

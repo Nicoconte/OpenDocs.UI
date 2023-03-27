@@ -1,4 +1,5 @@
 import useMenuTogglerStore from "../../stores/menutoggler.store";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
@@ -23,6 +24,7 @@ function PageContainer({ children }: PageContainerProps) {
                     { children }                    
                 </div>
             </div>
+            <LoadingSpinner />
         </>
     )
 }
