@@ -5,7 +5,7 @@ import SearchInput from "./SearchInput/SearchInput";
 
 function FilterForm() {
     return (
-        <div className={`${styles.filterFormContainer} bg-slate-200`}>
+        <div className={`${styles.filterFormContainer}`}>
             <div className={styles.filterForm}>
                 <SearchInput />
                 <GroupCheckbox />

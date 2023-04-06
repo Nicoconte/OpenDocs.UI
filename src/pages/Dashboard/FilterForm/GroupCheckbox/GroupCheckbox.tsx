@@ -15,7 +15,7 @@ function GroupCheckbox() {
                 <input type="checkbox" value={`${isGroupCheckboxActive}`} onClick={handleToggle} />
                 <div className={styles.slider}></div>
             </label>
-            <span>Agrupar aplicaciones</span>
+            <span className="text-slate-700">Agrupar aplicaciones</span>
         </div>
     );
 }

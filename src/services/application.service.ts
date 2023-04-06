@@ -6,7 +6,7 @@ import { axiosClient } from "./base.service"
 export const ApplicationService = {
     getAllApplication: async(filters: {} = {}): Promise<GetAllAplicationResponse | ErrorResponse> => {
         try {
-            let queryString = buildQueryStringFilters(filters);
+            let queryString: string = buildQueryStringFilters(filters);
             
             let response = await axiosClient.get(`${apiUrls.applicationEndpoint}${queryString}`);
 

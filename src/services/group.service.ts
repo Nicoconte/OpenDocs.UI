@@ -6,7 +6,7 @@ import { axiosClient } from "./base.service";
 export const GroupService = {
     getAllGroups: async(filters: {} = {}): Promise<GetAllGroupsResponse | ErrorResponse> => {
         try {
-            let queryString = buildQueryStringFilters(filters);
+            let queryString: string = buildQueryStringFilters(filters);
 
             let response = await axiosClient.get(`${apiUrls.groupEndpoint}${queryString}`);
 
